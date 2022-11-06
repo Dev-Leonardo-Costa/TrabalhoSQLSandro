@@ -1,0 +1,30 @@
+insert into disciplina (codigo, nome) values (1, 'BANCO DE DADOS');
+insert into disciplina (codigo, nome) values (2, 'ESTRUTURAS DE DADOS ALGORITMOS');
+insert into disciplina (codigo, nome) values (3, 'LINGUAGEM DE PROGRAMAÇÃO 2');
+insert into disciplina (codigo, nome) values (4, 'COMUNICAÇÃO DE DADOS');
+
+insert into professor(id, nome, disciplina_codigo) values (1, 'SANDRO COSTA MESQUITA', 1);
+insert into professor(id, nome, disciplina_codigo) values (2, 'GERHARD PHILIPPE DE SABOIA OLIVEIRA', 2);
+insert into professor(id, nome, disciplina_codigo) values (3, 'NELSON ALEX SILVA LIMA', 3);
+insert into professor(id, nome, disciplina_codigo) values (4, 'LEANDRO KRAVCZUK VIEIRA', 4);
+
+insert into aluno (nome, professor_id) values ('LEONARDO COSTA', 1);
+insert into aluno (nome, professor_id) values ('ENZO GABRIEL', 1);
+insert into aluno (nome, professor_id) values ('JOÃO MIGUEL', 1);
+insert into aluno (nome, professor_id) values ('MARIA EDUARDA', 1);
+insert into aluno (nome, professor_id) values ('PEDRO HENRIQUE', 1);
+insert into aluno (nome, professor_id) values ('MARIA CLARA', 2);
+insert into aluno (nome, professor_id) values ('MARIA CECÍLIA', 2);
+insert into aluno (nome, professor_id) values ('MARIA JULIA', 2);
+insert into aluno (nome, professor_id) values ('MARIA LUIZA', 2);
+insert into aluno (nome, professor_id) values ('ANA CLARA', 2);
+insert into aluno (nome, professor_id) values ('MARIA ALICE', 3);
+insert into aluno (nome, professor_id) values ('MIGUEL DO NASCIMENTO', 3);
+insert into aluno (nome, professor_id) values ('ARTHUR MORAES', 3);
+insert into aluno (nome, professor_id) values ('FRANSCISCO HEITOR', 3);
+insert into aluno (nome, professor_id) values ('DAVI COSTA', 3);
+insert into aluno (nome, professor_id) values ('LORENZO DA SILVA', 4);
+insert into aluno (nome, professor_id) values ('DAVI LUCCA DE BARROS', 4);
+insert into aluno (nome, professor_id) values ('BERNARDO VASCONCELOS', 4);
+insert into aluno (nome, professor_id) values ('GABRIEL DE SOUSA', 4);
+insert into aluno (nome, professor_id) values ('FRANCISCO ELIOMAR', 4);
