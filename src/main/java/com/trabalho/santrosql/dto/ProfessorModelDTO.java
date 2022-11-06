@@ -12,6 +12,6 @@ public class ProfessorModelDTO {
 
     private String professor;
     private DisciplinaModelDTO disciplina;
-    private AlunoModelDTO alunos;
+    private List<AlunoModelDTO> alunos;
 
 }

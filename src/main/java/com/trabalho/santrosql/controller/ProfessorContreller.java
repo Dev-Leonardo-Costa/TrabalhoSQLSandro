@@ -5,6 +5,8 @@ import com.trabalho.santrosql.dto.DisciplinaModelDTO;
 import com.trabalho.santrosql.dto.ProfessorModelDTO;
 import com.trabalho.santrosql.model.Aluno;
 import com.trabalho.santrosql.model.Professor;
+import com.trabalho.santrosql.service.AlunoService;
+import com.trabalho.santrosql.service.DisciplinaService;
 import com.trabalho.santrosql.service.ProfessorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +24,9 @@ public class ProfessorContreller {
 
     @Autowired
     private ProfessorService service;
+
+    @Autowired
+    private AlunoService alunoService;
 
     @GetMapping
     public List<ProfessorModelDTO> buscar(){
@@ -44,6 +49,9 @@ public class ProfessorContreller {
 
         professorModelDTO.setDisciplina(disciplinaModelDTO);
 
+        List<AlunoModelDTO> alunos = new ArrayList<>();
+        professorModelDTO.setAlunos(alunos);
+
         return professorModelDTO;
     }
 
@@ -51,13 +59,6 @@ public class ProfessorContreller {
         return professors.stream()
                 .map(professor -> toModelProfessorDTO(professor))
                 .collect(Collectors.toList());
-    }
-
-    private AlunoModelDTO toModelAlunoDTO(Aluno aluno){
-        AlunoModelDTO alunoModelDTO = new AlunoModelDTO();
-        alunoModelDTO.setId(aluno.getId());
-        alunoModelDTO.setNome(aluno.getNome());
-        return alunoModelDTO;
     }
 
 }

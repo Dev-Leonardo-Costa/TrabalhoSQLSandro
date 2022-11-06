@@ -1,7 +1,7 @@
 package com.trabalho.santrosql.service;
 
-import com.trabalho.santrosql.model.Disciplina;
-import com.trabalho.santrosql.repository.DisciplinaRepository;
+import com.trabalho.santrosql.model.Aluno;
+import com.trabalho.santrosql.repository.AlunoReposity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -9,13 +9,13 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-public class DisciplinaService {
+public class AlunoService {
 
     @Autowired
-    private DisciplinaRepository repository;
+    private AlunoReposity reposity;
 
     @Transactional
-    public List<Disciplina> buscarTodas(){
-        return repository.findAll();
+    public List<Aluno> buscarTodos(){
+        return reposity.findAll();
     }
 }
