@@ -18,7 +18,6 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/professors")
 public class ProfessorController {
-
     @Autowired
     private ProfessorService service;
 
@@ -27,34 +26,12 @@ public class ProfessorController {
 
     @GetMapping
     public List<ProfessorModelDTO> buscar() {
-        return toCollectionModelDTO(service.buscarTodos());
+        return ProfessorModelDTO.toCollectionModelDTO(service.buscarTodos());
     }
 
     @GetMapping("/{professorId}")
     public ProfessorModelDTO buscarPorId(@PathVariable Long professorId) {
         Professor professor = service.buscarProfessorOuFalhar(professorId);
-        return toModelProfessorDTO(professor);
+        return ProfessorModelDTO.toModelProfessorDTO(professor);
     }
-
-    private ProfessorModelDTO toModelProfessorDTO(Professor professor) {
-        DisciplinaModelDTO disciplinaModelDTO = new DisciplinaModelDTO();
-        disciplinaModelDTO.setCodigo(professor.getDisciplina().getCodigo());
-        disciplinaModelDTO.setDisciplina(professor.getDisciplina().getNome());
-
-        List<AlunoModelDTO> alunos = AlunoModelDTO.toCollectionAlunoModelDTO(professor.getAlunos());
-
-        ProfessorModelDTO professorModelDTO = new ProfessorModelDTO();
-        professorModelDTO.setProfessor(professor.getNome());
-
-        professorModelDTO.setDisciplina(disciplinaModelDTO);
-        professorModelDTO.setAlunos(alunos);
-        return professorModelDTO;
-    }
-
-    private List<ProfessorModelDTO> toCollectionModelDTO(List<Professor> professors) {
-        return professors.stream()
-                .map(professor -> toModelProfessorDTO(professor))
-                .collect(Collectors.toList());
-    }
-
 }

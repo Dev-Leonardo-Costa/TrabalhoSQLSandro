@@ -1,6 +1,7 @@
 package com.trabalho.santrosql.dto;
 
 import com.trabalho.santrosql.model.Aluno;
+import com.trabalho.santrosql.model.Professor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -27,4 +28,14 @@ public class AlunoModelDTO {
         return alunoModelDTO;
     }
 
+    public static AlunoModelDTO toModelADDDto(Aluno aluno) {
+        AlunoModelDTO alunoDTO = new AlunoModelDTO();
+        alunoDTO.setId(aluno.getId());
+        alunoDTO.setNome(aluno.getNome());
+
+        Professor professor = new Professor();
+        professor.setId(aluno.getProfessor().getId());
+        professor.setNome(aluno.getProfessor().getNome());
+        return alunoDTO;
+    }
 }
